@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+:root{--bg:#101820;--panel:#182631;--orange:#ff7a1a;--cream:#fff1d0;--mint:#8ee3b5;--muted:#a5bac4;--line:#47616e}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{background:var(--bg);color:var(--cream);font-family:'VT323',monospace;font-size:20px;-webkit-text-size-adjust:100%}
+body{margin:0;min-height:100svh;background:radial-gradient(ellipse at top,#263b49 0%,var(--bg) 60%);overscroll-behavior:none}
+button,input{font:inherit}
+h1,h2{font-family:'Press Start 2P',monospace;text-transform:uppercase;margin:0}
+
+.shell{width:min(100%,480px);margin:0 auto;padding:10px 12px calc(20px + env(safe-area-inset-bottom));display:flex;flex-direction:column;gap:12px}
+
+header{display:flex;align-items:center;gap:12px}
+.flag{font-size:30px;line-height:1}
+.eyebrow{font-size:15px;letter-spacing:1.5px;color:var(--mint);margin:0 0 4px}
+h1{font-size:clamp(13px,4.6vw,20px);line-height:1.4}
+.subtitle{margin:4px 0 0;font-size:17px;color:var(--muted)}
+
+.panel{background:var(--panel);border:3px solid var(--line);box-shadow:0 4px 0 #080e12;padding:12px}
+label{display:block;font-family:'Press Start 2P',monospace;font-size:10px;color:var(--mint);margin-bottom:8px}
+.entry{display:flex;gap:8px}
+input{flex:1;min-width:0;padding:10px;border:2px solid #59717c;background:#0c151b;color:var(--cream);font-size:22px;border-radius:0;outline:none}
+input:focus{border-color:var(--mint)}
+/* iOS, 16px altı inputa odaklanınca sayfayı zoom'lar; 22px güvenli */
+#startButton{border:0;background:var(--orange);color:#1b1b1b;padding:0 12px;font-family:'Press Start 2P',monospace;font-size:10px;line-height:1.5;box-shadow:0 4px 0 #a6430b;cursor:pointer;touch-action:manipulation}
+#startButton:active{transform:translateY(3px);box-shadow:0 1px 0 #a6430b}
+.hint{font-size:16px;color:var(--muted);line-height:1.2;margin:8px 0 0}
+#message{margin-top:8px;padding:6px 8px;background:#0f1a21;color:#ffcf8b;font-size:19px;line-height:1.15}
+
+.game-wrap{display:flex;flex-direction:column;align-items:center;border:3px solid var(--line);box-shadow:0 4px 0 #080e12;background:#0b1319;overflow:hidden}
+#game{width:min(100%,calc(62svh * 0.6));aspect-ratio:360/600;background:#286342;line-height:0}
+#game canvas{display:block;image-rendering:pixelated;touch-action:none}
+.touch-controls{width:100%;display:flex;align-items:center;justify-content:center;gap:20px;padding:10px;background:#101b22;border-top:3px solid var(--line)}
+.touch-controls span{font-size:17px;letter-spacing:2px;color:var(--muted)}
+.touch-controls button{width:84px;height:54px;border:3px solid var(--cream);background:#263b49;color:var(--cream);font-size:28px;box-shadow:0 4px 0 #070c10;touch-action:manipulation;user-select:none;-webkit-user-select:none}
+.touch-controls button:active{background:var(--orange);color:#101820;transform:translateY(2px);box-shadow:0 2px 0 #070c10}
+
+.leader-title{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.leader-title h2{font-size:11px;line-height:1.6}
+.secondary{border:2px solid var(--line);background:#263b49;color:var(--cream);padding:8px 10px;font-family:'Press Start 2P',monospace;font-size:9px;cursor:pointer;touch-action:manipulation}
+#scores{list-style:none;padding:0;margin:12px 0 0;display:grid;gap:6px}
+#scores li{display:flex;gap:10px;padding:8px 10px;background:#0f1a21;border-left:3px solid #4d6672;font-size:22px}
+#scores li:first-child{border-left-color:var(--orange)}
+#scores .rank{color:var(--mint);width:30px;flex-shrink:0}
+#scores .player{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#scores .points{color:var(--orange);white-space:nowrap}
+#scores .empty{font-size:18px;color:var(--muted)}
+footer{text-align:center;color:#8096a1;font-size:16px}
+@media(max-height:700px){#game{width:min(100%,calc(56svh * 0.6))}.subtitle,header .eyebrow{display:none}}
+
+h1{color:var(--orange)}
+header{padding-bottom:10px;border-bottom:6px solid;border-image:linear-gradient(90deg,#ae1c28 33.3%,#fff 33.3% 66.6%,#21468b 66.6%) 1}

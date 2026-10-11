@@ -1,0 +1,61 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Pixel Grand Prix — Erasmus Days</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/phaser@3.80.1/dist/phaser.min.js"></script>
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <span class="flag">🇳🇱</span>
+      <div>
+        <p class="eyebrow">ERASMUS DAYS</p>
+        <h1>PIXEL GRAND PRIX</h1>
+        <p class="subtitle">An 8-bit race through the Netherlands</p>
+      </div>
+    </header>
+
+    <section class="panel">
+      <label for="playerName">PLAYER NAME</label>
+      <div class="entry">
+        <input id="playerName" maxlength="15" autocomplete="off"
+               placeholder="Enter your name" aria-label="Player name">
+        <button id="startButton">START RACE</button>
+      </div>
+      <p class="hint">Everyone takes a turn on this phone. Reuse the same name — only your best score is saved.</p>
+      <div id="message">Enter a name and start racing!</div>
+    </section>
+
+    <section class="game-wrap">
+      <div id="game"></div>
+      <div class="touch-controls">
+        <button id="leftButton" aria-label="Steer left">◀</button>
+        <span>STEER</span>
+        <button id="rightButton" aria-label="Steer right">▶</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="leader-title">
+        <div>
+          <p class="eyebrow">CLASS RESULTS</p>
+          <h2>ERASMUS CLASS LEADERBOARD</h2>
+        </div>
+        <button id="refreshButton" class="secondary" aria-label="Reset scoreboard">RESET</button>
+      </div>
+      <ol id="scores">
+        <li class="empty">Your best score will appear here.</li>
+      </ol>
+      <p class="hint">Scores are saved in this browser.</p>
+    </section>
+
+    <footer>Pixel art • Netherlands • Good luck, racers!</footer>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
